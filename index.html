@@ -6,8 +6,10 @@
 <title>Best of Luck Dr. Syed Zufishan Andrabi</title>
 
 <style>
+/* RESET */
 *{margin:0;padding:0;box-sizing:border-box}
 
+/* BODY */
 body{
     font-family:"Chalkboard SE","Comic Sans MS","Marker Felt",cursive;
     background:linear-gradient(135deg,#667eea,#764ba2);
@@ -15,6 +17,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+    padding:20px;
 }
 
 /* HEART INTRO */
@@ -46,55 +49,88 @@ body{
     background:linear-gradient(135deg,#ff6b6b,#ee5a6f);
     border-radius:100px 100px 0 0;
 }
-.heart::before{left:100px;transform:rotate(-45deg);transform-origin:0 100%;transition:1.3s ease 3s}
-.heart::after{left:0;transform:rotate(45deg);transform-origin:100% 100%;transition:1.3s ease 3s}
-.open .heart::before{transform:rotate(-45deg) translateX(-120px) rotateY(-60deg)}
-.open .heart::after{transform:rotate(45deg) translateX(120px) rotateY(60deg)}
+.heart::before{left:100px;transform:rotate(-45deg);transform-origin:0 100%}
+.heart::after{left:0;transform:rotate(45deg);transform-origin:100% 100%}
+
+.heart-photo{
+    width:180px;
+    max-height:240px;
+    object-fit:contain;
+    border-radius:18px;
+    margin-bottom:20px;
+    border:5px solid #fff;
+    background:#fff;
+    padding:6px;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+    opacity:0;
+    animation:fadeText 1s ease 1.2s forwards;
+}
 
 .heart-text{
-    margin-top:35px;
-    font-size:2.3em;
-    color:white;
+    font-size:2.4em;
+    color:#fff;
     font-weight:bold;
+    letter-spacing:1px;
     opacity:0;
-    animation:fadeText 1s ease 1.5s forwards;
+    animation:fadeText 1s ease 1.6s forwards;
 }
 @keyframes fadeText{to{opacity:1}}
 
 /* MAIN CARD */
 .container{
-    max-width:900px;
-    background:rgba(255,255,255,.96);
-    border-radius:22px;
-    padding:50px;
+    max-width:920px;
+    background:rgba(255,255,255,.97);
+    border-radius:26px;
+    padding:55px 45px;
     text-align:center;
-    box-shadow:0 20px 60px rgba(0,0,0,.3);
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
     opacity:0;
     animation:slideIn 1s ease 5.3s forwards;
 }
-@keyframes slideIn{to{opacity:1}}
+@keyframes slideIn{to{opacity:1;transform:translateY(0)}}
 
-h1{color:#667eea;font-size:2.6em}
+/* TITLES */
+h1{
+    color:#667eea;
+    font-size:2.7em;
+    margin-bottom:10px;
+}
 .name{
-    font-size:2.6em;
+    font-size:2.7em;
     color:#764ba2;
-    margin:15px 0;
     font-weight:bold;
+    margin-bottom:25px;
 }
 
-/* CLICK PROMPT */
+/* MAIN PHOTO */
+.profile-pic{
+    width:270px;
+    max-height:400px;
+    object-fit:contain;
+    border-radius:22px;
+    margin:30px auto;
+    display:block;
+    border:6px solid #764ba2;
+    background:#fff;
+    padding:10px;
+    box-shadow:0 18px 45px rgba(0,0,0,.28);
+}
+
+/* CLICK PROMPTS */
 .click-prompt{
-    font-size:1.1em;
+    font-size:1.15em;
     color:#764ba2;
-    margin:25px 0;
+    margin:30px 0 10px;
     cursor:pointer;
+    font-weight:bold;
+    letter-spacing:.5px;
     animation:blink 1.5s infinite;
 }
 @keyframes blink{50%{opacity:.4}}
 
 .message,.quote{
-    font-size:1.35em;
-    line-height:1.8;
+    font-size:1.4em;
+    line-height:1.9;
     margin:25px 0;
     color:#333;
     display:none;
@@ -102,28 +138,66 @@ h1{color:#667eea;font-size:2.6em}
 
 .quote{
     font-style:italic;
-    background:#f3f3f3;
-    padding:20px;
-    border-left:5px solid #667eea;
+    background:linear-gradient(135deg,#f3f4ff,#f8f8ff);
+    padding:25px;
+    border-left:6px solid #667eea;
+    border-radius:12px;
+}
+
+/* MEMORY SECTION */
+.memory{
+    margin:60px 0;
+    padding:40px 35px;
+    background:linear-gradient(135deg,#f8f9ff,#ffffff);
+    border-radius:26px;
+    box-shadow:inset 0 0 0 2px rgba(118,75,162,.15);
+}
+.memory h2{
+    font-size:2.1em;
+    color:#667eea;
+    margin-bottom:20px;
+}
+.memory p{
+    font-size:1.35em;
+    line-height:2;
+    color:#444;
+}
+.memory img{
+    width:280px;
+    margin:30px auto 0;
+    display:block;
+    border-radius:22px;
+    object-fit:contain;
+    border:6px solid #764ba2;
+    background:#fff;
+    padding:8px;
+    box-shadow:0 18px 40px rgba(0,0,0,.25);
 }
 
 /* BUTTON */
 .button{
-    padding:15px 40px;
-    font-size:1.2em;
+    padding:16px 45px;
+    font-size:1.3em;
     border:none;
-    border-radius:50px;
+    border-radius:60px;
     background:linear-gradient(135deg,#667eea,#764ba2);
-    color:white;
+    color:#fff;
     cursor:pointer;
-    margin-top:30px;
+    margin-top:40px;
+    box-shadow:0 12px 30px rgba(0,0,0,.3);
+    transition:.3s;
+}
+.button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 40px rgba(0,0,0,.35);
 }
 
 /* FOOTER */
 .footer{
-    margin-top:40px;
+    margin-top:45px;
     color:#555;
-    font-size:1.1em;
+    font-size:1.15em;
+    font-weight:bold;
 }
 
 /* CONFETTI */
@@ -138,36 +212,26 @@ h1{color:#667eea;font-size:2.6em}
 @keyframes confettiFall{
     to{transform:translateY(110vh) rotate(720deg)}
 }
-
-/* PARTY POPPERS */
-.popper{
-    position:fixed;
-    bottom:30px;
-    width:80px;
-    height:80px;
-    background:linear-gradient(135deg,#667eea,#764ba2);
-    clip-path:polygon(0 100%,50% 0,100% 100%);
-    z-index:4000;
-}
-.popper.left{left:30px;transform:rotate(-20deg)}
-.popper.right{right:30px;transform:rotate(20deg)}
 </style>
 </head>
 
 <body>
 
+<!-- HEART INTRO -->
 <div class="heart-overlay">
-    <div class="heart-container" id="heartContainer">
-        <div class="heart"></div>
-    </div>
+    <img src="https://image2url.com/r2/default/images/1768848555366-8e840dab-3cfd-43bf-99be-c03a62c86ca2.jpeg" class="heart-photo">
+    <div class="heart-container"><div class="heart"></div></div>
     <div class="heart-text">For Zufu ❤️</div>
 </div>
 
 <div class="container">
-    <div style="font-size:4em">🩺</div>
+    <div style="font-size:4.2em">🩺</div>
     <h1>All the Best for Your Finals!</h1>
     <div class="name">Dr. Syed Zufishan Andrabi</div>
 
+    <img src="https://image2url.com/r2/default/images/1768848555366-8e840dab-3cfd-43bf-99be-c03a62c86ca2.jpeg" class="profile-pic">
+
+    <!-- OLD CONTENT -->
     <div class="click-prompt" onclick="typeText(this,'msg1')">✨ Click to reveal</div>
     <div class="message" id="msg1">
 From tiny dreams to white coats, from late-night studies to endless sacrifices —
@@ -188,6 +252,23 @@ No matter the outcome, you are already extraordinary —
 but we know you’ll shine. 💜
     </div>
 
+    <!-- NEW MEMORY SECTION -->
+    <div class="memory">
+        <h2>Time Flew By 💫</h2>
+        <p>
+From this to this — time truly flew by.<br><br>
+From those <b>“khin mech”</b> moments to becoming <b>Doctor Sahiba</b>,
+time didn’t just pass, it transformed you.<br><br>
+From school days, from 12th standard when everything changed,
+to being without you after that phase — missing you the most,
+watching you chase your dream from a distance.<br><br>
+From silent prayers to proud tears —
+time flew, but love never did.
+        </p>
+
+        <img src="https://image2url.com/r2/default/images/1768848881105-5ec8b97a-1668-484f-8946-c31dedc5333c.jpeg">
+    </div>
+
     <button class="button" onclick="celebrate()">Celebrate 🎉</button>
 
     <div class="footer">
@@ -197,10 +278,6 @@ but we know you’ll shine. 💜
 </div>
 
 <script>
-setTimeout(()=>{
-    document.getElementById("heartContainer").classList.add("open")
-},3000)
-
 function typeText(prompt,id){
     prompt.style.display="none"
     const el=document.getElementById(id)
@@ -216,41 +293,17 @@ function typeText(prompt,id){
     },120)
 }
 
-/* GOOGLE-STYLE PARTY POPPER */
 function celebrate(){
     const colors=["#ff6b6b","#feca57","#48dbfb","#1dd1a1","#5f27cd","#ff9ff3"]
-
-    const left=document.createElement("div")
-    const right=document.createElement("div")
-    left.className="popper left"
-    right.className="popper right"
-    document.body.append(left,right)
-
-    for(let i=0;i<180;i++){
+    for(let i=0;i<160;i++){
         const c=document.createElement("div")
         c.className="confetti"
         c.style.left=Math.random()*100+"vw"
         c.style.background=colors[Math.floor(Math.random()*colors.length)]
         c.style.animationDuration=(2+Math.random()*2)+"s"
         document.body.appendChild(c)
+        setTimeout(()=>c.remove(),5000)
     }
-
-    const rain=setInterval(()=>{
-        for(let i=0;i<20;i++){
-            const c=document.createElement("div")
-            c.className="confetti"
-            c.style.left=Math.random()*100+"vw"
-            c.style.background=colors[Math.floor(Math.random()*colors.length)]
-            c.style.animationDuration=(3+Math.random()*2)+"s"
-            document.body.appendChild(c)
-            setTimeout(()=>c.remove(),5000)
-        }
-    },300)
-
-    setTimeout(()=>{
-        clearInterval(rain)
-        document.querySelectorAll(".confetti,.popper").forEach(e=>e.remove())
-    },4000)
 }
 </script>
 
